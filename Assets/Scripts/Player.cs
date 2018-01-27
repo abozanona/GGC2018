@@ -15,6 +15,10 @@ public class Player : MonoBehaviour {
     public GameObject gameoverCanvas;
     public GameObject gameoverText;
 
+    public GameObject destroyParticle;
+
+    public GameObject rocket1, rocket2;
+
     public bool hasColided = false;
     // Use this for initialization
     void Start () {
@@ -29,6 +33,16 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     bool isUp = false;
     void Update () {
+        if (isMoving)
+        {
+            rocket1.SetActive(true);
+            rocket2.SetActive(true);
+        }
+        else
+        {
+            rocket1.SetActive(false);
+            rocket2.SetActive(false);
+        }
         //float angle = Mathf.PingPong(Time.time, 140) - 70;
         float value = 1.3f;
         if (!isMoving)
@@ -81,6 +95,8 @@ public class Player : MonoBehaviour {
             {
                 return;
             }
+            GameObject destroyParticle = Instantiate(this.destroyParticle, gameObject.transform);
+            Destroy(destroyParticle, 0.5f);
             gamePlay.score++;
             hasColided = true;
             int newPointNumber = coll.gameObject.GetComponent<Point>().number;
