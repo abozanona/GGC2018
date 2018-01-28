@@ -225,9 +225,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\adbka\Assets\s&amp;p&amp;ee\Mainmenu.cs" />
     <Compile Include="Assets\Scripts\GamePlay.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Point.cs" />
+    <Compile Include="Assets\Sprites\ArrowsAnimator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\New Folder\ProjectSettings\ProjectVersion.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
